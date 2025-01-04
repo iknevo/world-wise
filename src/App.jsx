@@ -8,7 +8,9 @@ export default function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<HomePage />} />
+        {["/", "home"].map((path) => (
+          <Route path={path} element={<HomePage />} key={path} />
+        ))}
         <Route path="product" element={<Product />} />
         <Route path="pricing" element={<Pricing />} />
         <Route path="*" element={<PageNotFound />} />
