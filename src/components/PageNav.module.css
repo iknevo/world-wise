@@ -1,0 +1,10 @@
+.nav ul {
+  display: flex;
+  justify-content: space-between;
+  list-style: none;
+}
+
+.nav :global(.active) {
+  background-color: red;
+  color: white;
+}
