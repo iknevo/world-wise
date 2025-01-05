@@ -1,19 +1,27 @@
 import { NavLink } from "react-router-dom";
-import styles from "./PageNav.module.css";
+import "./PageNav.scss";
 import Logo from "./Logo";
-
-const pages = ["pricing", "product", "login"];
 
 export default function PageNav() {
   return (
-    <nav className={styles.nav}>
+    <nav className="flex justify-between items-center">
       <Logo />
-      <ul>
-        {pages.map((page, i) => (
-          <li key={i}>
-            <NavLink to={`/${page}`}>{page}</NavLink>
-          </li>
-        ))}
+      <ul className="flex items-center gap-16 list-none">
+        <li>
+          <NavLink to="/pricing" className="nav__link">
+            Pricing
+          </NavLink>
+        </li>
+        <li>
+          <NavLink to="/product" className="nav__link">
+            Product
+          </NavLink>
+        </li>
+        <li>
+          <NavLink to="/login" className="nav__link ctaLink">
+            Login
+          </NavLink>
+        </li>
       </ul>
     </nav>
   );

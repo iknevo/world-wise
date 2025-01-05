@@ -1,0 +1,12 @@
+.nav {
+  &__link:link,
+  &__link:visited {
+    @apply no-underline text-light-2 uppercase text-xl font-semibold;
+    &.active {
+      @apply text-brand-green;
+    }
+    &.ctaLink {
+      @apply bg-brand-green text-dark-1 py-0.8 px-8 rounded-xl;
+    }
+  }
+}
