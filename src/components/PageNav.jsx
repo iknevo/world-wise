@@ -1,17 +1,17 @@
 import { NavLink } from "react-router-dom";
 import styles from "./PageNav.module.css";
+import Logo from "./Logo";
 
-const pages = ["home", "pricing", "product"];
+const pages = ["pricing", "product", "login"];
 
 export default function PageNav() {
   return (
     <nav className={styles.nav}>
+      <Logo />
       <ul>
         {pages.map((page, i) => (
           <li key={i}>
-            <NavLink to={`/${page}`}>
-              {page.charAt(0).toUpperCase() + page.slice(1)}
-            </NavLink>
+            <NavLink to={`/${page}`}>{page}</NavLink>
           </li>
         ))}
       </ul>
