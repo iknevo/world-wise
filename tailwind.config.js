@@ -3,6 +3,10 @@ export default {
   content: ["./*.html", "./src/**/*.{js,jsx}"],
   theme: {
     extend: {
+      padding: {
+        0.8: "0.8rem",
+        1.2: "1.2rem",
+      },
       colors: {
         brand: {
           orange: "#ffb545",
@@ -23,9 +27,13 @@ export default {
     colors: {},
     fontFamily: {
       sans: ["Manrope", "sans-serif"],
+      inherit: "inherit",
     },
     lineHeight: {
       relaxed: "1.6",
+    },
+    fontSize: {
+      "2xl": "1.6rem",
     },
   },
   plugins: [],

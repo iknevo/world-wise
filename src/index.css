@@ -20,14 +20,13 @@
 }
 
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: inherit;
+  /* margin: 0; */
+  /* padding: 0; */
+  @apply box-border m-0 p-0;
 }
 
 html {
   font-size: 62.5%;
-  box-sizing: border-box;
 }
 
 body {
@@ -35,19 +34,20 @@ body {
 }
 
 label {
-  font-size: 1.6rem;
-  font-weight: 600;
+  @apply text-2xl font-semibold;
+  /* font-size: 1.6rem; */
+  /* font-weight: 600; */
 }
 
 input,
 textarea {
-  width: 100%;
-  padding: 0.8rem 1.2rem;
-  font-family: inherit;
-  font-size: 1.6rem;
-  border: none;
+  /* width: 100%; */
+  /* padding: 0.8rem 1.2rem; */
+  /* font-family: inherit; */
+  /* font-size: 1.6rem; */
+  /* border: none; */
   /* border-radius: 5px; */
-  @apply rounded-lg bg-light-3 transition-all duration-200;
+  @apply w-full rounded-lg bg-light-3 transition-all duration-200 border-none text-2xl py-0.8 px-1.2 font-inherit;
   /* background-color: var(--color-light--3); */
   /* transition: all 0.2s; */
 }
@@ -59,15 +59,7 @@ input:focus {
 
 .cta:link,
 .cta:visited {
-  display: inline-block;
-  background-color: var(--color-brand--2);
-  color: var(--color-dark--1);
-  text-transform: uppercase;
-  text-decoration: none;
-  font-size: 1.6rem;
-  font-weight: 600;
-  padding: 1rem 3rem;
-  border-radius: 5px;
+  @apply bg-brand-green text-dark-2 uppercase no-underline rounded-lg py-4 px-12 inline-block font-semibold text-2xl font-inherit;
 }
 
 /*
