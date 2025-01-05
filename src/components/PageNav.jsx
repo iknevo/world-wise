@@ -18,7 +18,7 @@ export default function PageNav() {
           </NavLink>
         </li>
         <li>
-          <NavLink to="/login" className="nav__link ctaLink">
+          <NavLink to="/login" className="nav__link cta-link">
             Login
           </NavLink>
         </li>
