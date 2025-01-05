@@ -1,6 +1,6 @@
 import { NavLink } from "react-router-dom";
 import "./PageNav.scss";
-import Logo from "./Logo";
+import { Logo } from "../";
 
 export default function PageNav() {
   return (
