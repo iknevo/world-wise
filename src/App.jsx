@@ -1,10 +1,25 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import {
+  BrowserRouter,
+  Routes,
+  Route,
+  // createBrowserRouter,
+  // RouterProvider,
+} from "react-router-dom";
 import Product from "./pages/Product/Product";
 import Pricing from "./pages/Pricing/Pricing";
 import HomePage from "./pages/Home/Homepage";
 import PageNotFound from "./pages/NotFound/PageNotFound";
 import AppLayout from "./pages/AppLayout/AppLayout";
 import Login from "./pages/Login/Login";
+
+// const router = createBrowserRouter([
+//   { path: "/", element: <HomePage /> },
+//   { path: "app", element: <AppLayout /> },
+//   { path: "product", element: <Product /> },
+//   { path: "pricing", element: <Pricing /> },
+//   { path: "login", element: <Login /> },
+//   { path: "*", element: <PageNotFound /> },
+// ]);
 
 export default function App() {
   return (
@@ -18,5 +33,6 @@ export default function App() {
         <Route path="*" element={<PageNotFound />} />
       </Routes>
     </BrowserRouter>
+    // <RouterProvider router={router} />
   );
 }
