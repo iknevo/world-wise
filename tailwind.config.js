@@ -40,9 +40,11 @@ export default {
     },
     lineHeight: {
       relaxed: "1.6",
+      none: 1,
     },
     borderWidth: {
       5: "5px",
+      2: "2px",
     },
   },
   plugins: [],
