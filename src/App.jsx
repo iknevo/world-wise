@@ -10,6 +10,7 @@ import Login from "./pages/Login/Login";
 import CityList from "./components/CityItem/CityList";
 import CountryList from "./components/CountryList/CountryList";
 import City from "./components/City/City";
+import Form from "./components/Form/Form";
 
 const API_URL = `http://localhost:3000`;
 
@@ -55,7 +56,7 @@ export default function App() {
           />
           <Route path="cities/:id" element={<City />} />
           <Route path="countries" element={<CountryList cities={cities} />} />
-          <Route path="form" element={<p>form</p>} />
+          <Route path="form" element={<Form />} />
         </Route>
         <Route path="product" element={<Product />} />
         <Route path="pricing" element={<Pricing />} />
