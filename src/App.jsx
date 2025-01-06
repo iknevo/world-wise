@@ -13,6 +13,7 @@ import AppLayout from "./pages/AppLayout/AppLayout";
 import Login from "./pages/Login/Login";
 import CityList from "./components/CityItem/CityList";
 import { useEffect, useState } from "react";
+import CountryList from "./components/CountryList/CountryList";
 
 // const router = createBrowserRouter([
 //   { path: "/", element: <HomePage /> },
@@ -63,7 +64,7 @@ export default function App() {
             path="cities"
             element={<CityList cities={cities} isLoading={isLoading} />}
           />
-          <Route path="countries" element={<p>countries</p>} />
+          <Route path="countries" element={<CountryList cities={cities} />} />
           <Route path="form" element={<p>form</p>} />
         </Route>
         <Route path="product" element={<Product />} />
