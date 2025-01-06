@@ -48,7 +48,7 @@ export default function App() {
         <Route path="app" element={<AppLayout />}>
           <Route
             index
-            element={<Navigate to="cities"/>}
+            element={<Navigate replace to="cities"/>}
           />
           <Route
             path="cities"
