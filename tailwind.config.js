@@ -31,7 +31,9 @@ export default {
         },
       },
     },
-    colors: {},
+    colors: {
+      inherit: "inherit",
+    },
     fontFamily: {
       sans: ["Manrope", "sans-serif"],
       inherit: "inherit",
