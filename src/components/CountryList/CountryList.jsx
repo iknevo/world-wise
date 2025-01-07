@@ -1,10 +1,10 @@
-/* eslint-disable react/prop-types */
 import styles from "./CountryList.module.css";
 import Spinner from "../Spinners/Spinner";
 import CountryItem from "./CountryItem";
 import Message from "../Message/Message";
-export default function CountryList({ cities, isLoading }) {
-  // console.log(cities);
+import { useCities } from "../../contexts/CitiesContext";
+export default function CountryList() {
+  const { cities, isLoading } = useCities();
   const countries = cities.reduce((arr, city) => {
     if (!arr.map((el) => el.country).includes(city.country))
       return [...arr, { country: city.country, emoji: city.emoji }];

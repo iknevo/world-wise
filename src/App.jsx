@@ -1,5 +1,4 @@
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
-import { useEffect, useState } from "react";
 
 import Product from "./pages/Product/Product";
 import Pricing from "./pages/Pricing/Pricing";
@@ -11,58 +10,27 @@ import CityList from "./components/CityItem/CityList";
 import CountryList from "./components/CountryList/CountryList";
 import City from "./components/City/City";
 import Form from "./components/Form/Form";
-
-const API_URL = `http://localhost:3000`;
+import { CitiesProvider } from "./contexts/CitiesContext";
 
 export default function App() {
-  const [cities, setCities] = useState([]);
-  const [isLoading, setIsLoading] = useState(false);
-  useEffect(() => {
-    const controller = new AbortController();
-    async function getCities() {
-      try {
-        setIsLoading(true);
-        const res = await fetch(`${API_URL}/cities`, {
-          signal: controller.signal,
-        });
-        if (!res.ok)
-          throw new Error("Something went wrong, Please try again later!");
-        const data = await res.json();
-        setCities(data);
-      } catch (err) {
-        if (err.name !== "AbortError") console.error(err.message);
-      } finally {
-        setIsLoading(false);
-      }
-    }
-    getCities();
-    return function () {
-      controller.abort();
-    };
-  }, []);
-
   return (
-    <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<HomePage />} />
-        <Route path="app" element={<AppLayout />}>
-          <Route
-            index
-            element={<Navigate replace to="cities"/>}
-          />
-          <Route
-            path="cities"
-            element={<CityList cities={cities} isLoading={isLoading} />}
-          />
-          <Route path="cities/:id" element={<City />} />
-          <Route path="countries" element={<CountryList cities={cities} />} />
-          <Route path="form" element={<Form />} />
-        </Route>
-        <Route path="product" element={<Product />} />
-        <Route path="pricing" element={<Pricing />} />
-        <Route path="login" element={<Login />} />
-        <Route path="*" element={<PageNotFound />} />
-      </Routes>
-    </BrowserRouter>
+    <CitiesProvider>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="app" element={<AppLayout />}>
+            <Route index element={<Navigate replace to="cities" />} />
+            <Route path="cities" element={<CityList />} />
+            <Route path="cities/:id" element={<City />} />
+            <Route path="countries" element={<CountryList />} />
+            <Route path="form" element={<Form />} />
+          </Route>
+          <Route path="product" element={<Product />} />
+          <Route path="pricing" element={<Pricing />} />
+          <Route path="login" element={<Login />} />
+          <Route path="*" element={<PageNotFound />} />
+        </Routes>
+      </BrowserRouter>
+    </CitiesProvider>
   );
 }
