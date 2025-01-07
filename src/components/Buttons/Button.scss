@@ -1,21 +1,12 @@
 .btn {
-  color: inherit;
-  text-transform: uppercase;
-  padding: 0.8rem 1.6rem;
-  font-family: inherit;
-  font-size: 1.5rem;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
+  @apply text-inherit uppercase py-[0.8rem] px-[1.6rem] font-inherit text-xl border-none rounded-lg cursor-pointer;
 
   &--primary {
-    font-weight: 700;
-    background-color: var(--color-brand--2);
-    color: var(--color-dark--1);
+    @apply font-bold bg-brand-green text-dark-2;
   }
 
   &--back {
-    font-weight: 600;
+    @apply font-semibold;
     background: none;
     border: 1px solid currentColor;
   }

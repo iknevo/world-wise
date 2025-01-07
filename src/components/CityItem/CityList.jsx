@@ -4,6 +4,7 @@ import Spinner from "../Spinners/Spinner";
 import CityItem from "./CityItem";
 import Message from "../Message/Message";
 export default function CityList({ cities, isLoading }) {
+  console.log(cities , isLoading)
   if (isLoading) return <Spinner />;
   if (cities.length === 0)
     return (
