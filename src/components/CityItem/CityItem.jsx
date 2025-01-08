@@ -1,4 +1,6 @@
 import { Link } from "react-router-dom";
+import { useCities } from "../../contexts/CitiesContext";
+import "./cityItem.scss";
 
 /* eslint-disable react/prop-types */
 const formatDate = (date) =>
@@ -10,12 +12,14 @@ const formatDate = (date) =>
 
 export default function CityItem({ city }) {
   const { cityName, emoji, date, id, position } = city;
-  // console.log(position);
+  const { currentCity } = useCities();
   return (
     <li>
       <Link
         to={`${id}?lat=${position.lat}&lng=${position.lng}`}
-        className="flex items-center gap-[1.6rem] bg-dark-3 rounded-xl py-4 px-8 border-l-5 border-brand-green cursor-pointer text-inherit no-underline city__item--active"
+        className={`flex items-center gap-[1.6rem] bg-dark-3 rounded-xl py-4 px-8 border-l-5 border-brand-green cursor-pointer text-inherit no-underline ${
+          id === currentCity.id && "city__item--active"
+        }`}
       >
         <span className="text-[2.6rem] leading-none">{emoji}</span>
         <h3 className="text-xxl font-semibold mr-auto">{cityName}</h3>

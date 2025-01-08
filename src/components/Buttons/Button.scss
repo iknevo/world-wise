@@ -1,17 +1,17 @@
 .btn {
   @apply text-inherit uppercase py-[0.8rem] px-[1.6rem] font-inherit text-xl border-none rounded-lg cursor-pointer;
 
-  &--primary {
+  &.primary {
     @apply font-bold bg-brand-green text-dark-2;
   }
 
-  &--back {
+  &.back {
     @apply font-semibold;
     background: none;
     border: 1px solid currentColor;
   }
 
-  &--position {
+  &.position {
     font-weight: 700;
     position: absolute;
     z-index: 1000;
