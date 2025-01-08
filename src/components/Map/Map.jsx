@@ -1,4 +1,5 @@
-import { useNavigate, useSearchParams } from "react-router-dom";
+/* eslint-disable react/prop-types */
+import { useNavigate } from "react-router-dom";
 import {
   MapContainer,
   TileLayer,
@@ -12,9 +13,9 @@ import { useEffect, useState } from "react";
 import { useCities } from "../../contexts/CitiesContext";
 import { useGeolocation } from "../../hooks/useGeolocation";
 import Button from "../Buttons/Button";
+import { useUrlPosition } from "../../hooks/useUrlPosition";
 
 export default function Map() {
-  const [searchParams] = useSearchParams();
   const [mapPosition, setMapPosition] = useState([42, 13]);
   const { cities } = useCities();
   const {
@@ -23,8 +24,8 @@ export default function Map() {
     getPosition: getGeolocationPosition,
   } = useGeolocation();
 
-  const lat = searchParams.get("lat");
-  const lng = searchParams.get("lng");
+  const [lat, lng] = useUrlPosition();
+  const navigate = useNavigate();
 
   useEffect(
     function () {
@@ -41,10 +42,14 @@ export default function Map() {
     [geolocationPosition]
   );
 
+  function handleClick() {
+    getGeolocationPosition();
+  }
+
   return (
     <div className={styles.mapContainer}>
       {!geolocationPosition && (
-        <Button type="position" onClick={getGeolocationPosition}>
+        <Button type="position" onClick={handleClick}>
           {isLoadingGeolocation ? "Loading..." : "Use your position"}
         </Button>
       )}
@@ -83,4 +88,5 @@ function DetectClick() {
   useMapEvent({
     click: (e) => navigate(`form?lat=${e.latlng.lat}&lng=${e.latlng.lng}`),
   });
+  return null;
 }

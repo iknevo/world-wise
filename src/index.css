@@ -47,7 +47,7 @@ textarea {
   /* font-size: 1.6rem; */
   /* border: none; */
   /* border-radius: 5px; */
-  @apply w-full rounded-lg bg-light-3 transition-all duration-200 border-none text-2xl py-0.8 px-1.2 font-inherit;
+  @apply w-full rounded-lg bg-light-3 transition-all duration-200 border-none text-2xl py-0.8 px-1.2 font-inherit text-dark-1 resize-none;
   /* background-color: var(--color-light--3); */
   /* transition: all 0.2s; */
 }
