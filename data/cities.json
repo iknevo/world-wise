@@ -1,3 +1,28 @@
 {
-  "cities": []
+  "cities": [
+    {
+      "cityName": "Mosset",
+      "country": "France",
+      "emoji": "🇫🇷",
+      "date": "2025-01-09T11:40:14.344Z",
+      "notes": "",
+      "position": {
+        "lat": "42.67922939693907",
+        "lng": "2.2631835937500004"
+      },
+      "id": 1
+    },
+    {
+      "cityName": "Valtajeros",
+      "country": "Spain",
+      "emoji": "🇪🇸",
+      "date": "2025-01-09T11:48:06.894Z",
+      "notes": "",
+      "position": {
+        "lat": "41.947646396147086",
+        "lng": "-2.2631835937500004"
+      },
+      "id": 2
+    }
+  ]
 }

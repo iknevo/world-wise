@@ -44,7 +44,6 @@ export default function Map() {
   function handleClick() {
     getGeolocationPosition();
   }
-
   return (
     <div className={styles.mapContainer}>
       {!geolocationPosition && (
