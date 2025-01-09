@@ -60,9 +60,25 @@ function CitiesProvider({ children }) {
         },
       });
       if (!res.ok)
-        throw new Error("Something went wrong, Please try again later!");
+        throw new Error(
+          "Something went wrong adding a city, Please try again later!"
+        );
       const data = await res.json();
       setCities((cities) => [...cities, data]);
+    } catch (err) {
+      console.error(err.message);
+    } finally {
+      setIsLoading(false);
+    }
+  }
+
+  async function deleteCity(id) {
+    try {
+      setIsLoading(true);
+      await fetch(`${API_URL}/cities/${id}`, {
+        method: "DELETE",
+      });
+      setCities((cities) => cities.filter((city) => city.id !== id));
     } catch (err) {
       console.error(err.message);
     } finally {
@@ -78,6 +94,7 @@ function CitiesProvider({ children }) {
         currentCity,
         getCurrentCity,
         createCity,
+        deleteCity,
       }}
     >
       {children};
