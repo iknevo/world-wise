@@ -1,11 +1,6 @@
 /* eslint-disable react-refresh/only-export-components */
 /* eslint-disable react/prop-types */
-import {
-  createContext,
-  useContext,
-  useEffect,
-  useReducer,
-} from "react";
+import { createContext, useContext, useEffect, useReducer } from "react";
 
 const API_URL = `http://localhost:3000`;
 const CitiesContex = createContext();
@@ -30,6 +25,7 @@ function reducer(state, action) {
         ...state,
         isLoading: false,
         cities: [...state.cities, action.payload],
+        currentCity: action.payload
       };
     case "city/deleted":
       return {

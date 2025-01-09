@@ -25,7 +25,6 @@ export default function Map() {
   } = useGeolocation();
 
   const [lat, lng] = useUrlPosition();
-  const navigate = useNavigate();
 
   useEffect(
     function () {
