@@ -1,3 +1,4 @@
+/* eslint-disable react-refresh/only-export-components */
 // "https://api.bigdatacloud.net/data/reverse-geocode-client?latitude=0&longitude=0"
 
 import { useEffect, useState } from "react";
@@ -5,7 +6,7 @@ import { useEffect, useState } from "react";
 import styles from "./Form.module.css";
 import Button from "../Buttons/Button";
 import { BackButton } from "../Buttons/BackButton";
-import { useNavigate, useParams, useSearchParams } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { useUrlPosition } from "../../hooks/useUrlPosition";
 import Message from "../Message/Message";
 import Spinner from "../Spinners/Spinner";
@@ -75,7 +76,7 @@ function Form() {
       position: { lat, lng },
     };
     await createCity(newCity);
-    navigate("/app/cities")
+    navigate("/app/cities");
   }
 
   if (!lat && !lng)
