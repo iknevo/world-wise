@@ -2,7 +2,8 @@
 /* eslint-disable react/prop-types */
 import { createContext, useContext, useEffect, useReducer } from "react";
 
-const API_URL = `http://localhost:3000`;
+// const API_URL = `http://localhost:3000`;
+const API_URL = `https://worldwise-server-psi.vercel.app`;
 const CitiesContex = createContext();
 
 const initialState = {

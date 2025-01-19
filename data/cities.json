@@ -1,3 +1,28 @@
 {
-  "cities": []
+  "cities": [
+    {
+      "cityName": "Le Bourg-d'Oisans",
+      "country": "France",
+      "emoji": "🇫🇷",
+      "date": "2025-01-17T02:03:18.088Z",
+      "notes": "",
+      "position": {
+        "lat": "44.950790865106875",
+        "lng": "6.063777892430102"
+      },
+      "id": 1
+    },
+    {
+      "cityName": "Markaz al Waḩat ad Dakhilah",
+      "country": "Egypt",
+      "emoji": "🇪🇬",
+      "date": "2025-01-17T02:03:26.368Z",
+      "notes": "",
+      "position": {
+        "lat": "26.260117053400723",
+        "lng": "29.465510485572043"
+      },
+      "id": 2
+    }
+  ]
 }
