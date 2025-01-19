@@ -1,6 +1,12 @@
 /* eslint-disable react-refresh/only-export-components */
 /* eslint-disable react/prop-types */
-import { createContext, useContext, useEffect, useReducer } from "react";
+import {
+  createContext,
+  useCallback,
+  useContext,
+  useEffect,
+  useReducer,
+} from "react";
 
 // const API_URL = `http://localhost:3000`;
 const API_URL = `https://worldwise-server-psi.vercel.app`;
@@ -70,18 +76,21 @@ function CitiesProvider({ children }) {
     };
   }, []);
 
-  async function getCurrentCity(id) {
-    if (+id === currentCity.id) return;
-    try {
-      dispatch({ type: "loading" });
-      const res = await fetch(`${API_URL}/cities/${id}`);
-      if (!res.ok) throw new Error("Error getting city...");
-      const data = await res.json();
-      dispatch({ type: "city/loaded", payload: data });
-    } catch (err) {
-      dispatch({ type: "rejected", payload: err.message });
-    }
-  }
+  const getCurrentCity = useCallback(
+    async function getCurrentCity(id) {
+      if (+id === currentCity.id) return;
+      try {
+        dispatch({ type: "loading" });
+        const res = await fetch(`${API_URL}/cities/${id}`);
+        if (!res.ok) throw new Error("Error getting city...");
+        const data = await res.json();
+        dispatch({ type: "city/loaded", payload: data });
+      } catch (err) {
+        dispatch({ type: "rejected", payload: err.message });
+      }
+    },
+    [currentCity.id]
+  );
 
   async function createCity(newCity) {
     try {

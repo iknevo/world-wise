@@ -22,7 +22,7 @@ export default function City() {
     function () {
       getCurrentCity(id);
     },
-    [id]
+    [id, getCurrentCity]
   );
 
   if (isLoading) return <Spinner />;
@@ -60,7 +60,7 @@ export default function City() {
       </div>
 
       <div>
-      <BackButton/>
+        <BackButton />
       </div>
     </div>
   );
