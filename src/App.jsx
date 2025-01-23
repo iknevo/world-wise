@@ -29,7 +29,7 @@ export default function App() {
         <BrowserRouter>
           <Suspense fallback={<SpinnerFullPage />}>
             <Routes>
-              <Route path="/" element={<HomePage />} />
+              <Route index element={<HomePage />} />
               <Route
                 path="app"
                 element={
