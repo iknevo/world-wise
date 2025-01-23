@@ -3,7 +3,7 @@
 
 import { useEffect, useState } from "react";
 
-import styles from "./Form.module.css";
+import styles from "./Form.module.scss";
 import Button from "../Buttons/Button";
 import { BackButton } from "../Buttons/BackButton";
 import { useNavigate } from "react-router-dom";

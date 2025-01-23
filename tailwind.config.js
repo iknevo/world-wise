@@ -7,6 +7,7 @@ export default {
       xl: "1.5rem",
       "2xl": "1.6rem",
       xxl: "1.7rem",
+      "5xl": "3rem",
     },
     extend: {
       spacing: { "70per": "70%", "80per": "80%" },
