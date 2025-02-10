@@ -27,7 +27,7 @@ export default function App() {
     <AuthProvider>
       <CitiesProvider>
         <BrowserRouter>
-          <Suspense fallback={<SpinnerFullPage />}>
+          <Suspense key={Math.random()} fallback={<SpinnerFullPage />}>
             <Routes>
               <Route index element={<HomePage />} />
               <Route
